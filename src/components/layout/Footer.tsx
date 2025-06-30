@@ -4,7 +4,7 @@ import { Rocket, Github, Twitter, Mail } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-900 text-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
@@ -56,6 +56,24 @@ export const Footer: React.FC = () => {
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
           <p>&copy; 2025 AgentLaunch AI. All rights reserved.</p>
         </div>
+      </div>
+
+      {/* Bolt.new Badge - Fixed Position */}
+      <div className="fixed bottom-4 right-4 z-50">
+        <a
+          href="https://bolt.new/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block transition-transform hover:scale-105 focus:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded-lg"
+          aria-label="Powered by Bolt.new"
+        >
+          <img
+            src="/logotext_poweredby_360w.png"
+            alt="Powered by Bolt.new"
+            className="h-8 w-auto sm:h-10 md:h-12 drop-shadow-lg"
+            loading="lazy"
+          />
+        </a>
       </div>
     </footer>
   );
