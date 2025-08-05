@@ -1,5 +1,5 @@
 // Mock data and local memory simulation
-export const LOCAL_MEMORY = true; // Set to false to use real Supabase/Stripe
+export const LOCAL_MEMORY = false; // Set to false to use real Supabase/Stripe
 
 // Mock user data
 export const mockUser = {
