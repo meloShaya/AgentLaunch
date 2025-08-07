@@ -33,10 +33,10 @@ export const AuthPage: React.FC = () => {
 
   if (LOCAL_MEMORY) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-cyan-900 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-emerald-900 via-amber-900 to-orange-900 flex items-center justify-center p-4">
         <div className="w-full max-w-md">
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-lg mb-4">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-emerald-600 to-amber-600 rounded-lg mb-4">
               <Rocket className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-2xl font-bold text-white mb-2">Welcome to AgentLaunch AI</h1>
@@ -45,14 +45,14 @@ export const AuthPage: React.FC = () => {
 
           <Card glass className="p-8">
             <div className="space-y-6">
-              <div className="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded">
+              <div className="bg-emerald-100 border border-emerald-400 text-emerald-700 px-4 py-3 rounded">
                 <p className="font-semibold">🧪 Demo Mode Active</p>
                 <p className="text-sm mt-1">
                   You're logged in as: <strong>demo@agentlaunch.ai</strong>
                 </p>
               </div>
 
-              <Button 
+              <Button
                 onClick={handleDemoLogin}
                 className="w-full"
                 size="lg"
@@ -77,10 +77,10 @@ export const AuthPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-cyan-900 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-900 via-amber-900 to-orange-900 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-lg mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-emerald-600 to-amber-600 rounded-lg mb-4">
             <Rocket className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-2xl font-bold text-white mb-2">Welcome to AgentLaunch AI</h1>

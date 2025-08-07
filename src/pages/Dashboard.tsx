@@ -26,7 +26,7 @@ export const Dashboard: React.FC = () => {
         setUser(currentUser);
         const userJobs = await getSubmissionJobs(currentUser.id);
         setJobs(userJobs);
-        
+
         if (userJobs.length > 0) {
           setSelectedJob(userJobs[0]);
           const jobResults = await getSubmissionResults(userJobs[0].id);
@@ -81,7 +81,7 @@ export const Dashboard: React.FC = () => {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-8 h-8 sm:w-12 sm:h-12 border-4 border-purple-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <div className="w-8 h-8 sm:w-12 sm:h-12 border-4 border-emerald-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
           <p className="text-gray-600 text-sm sm:text-base">Loading dashboard...</p>
         </div>
       </div>
@@ -148,7 +148,7 @@ export const Dashboard: React.FC = () => {
                       onClick={() => handleJobSelect(job)}
                       className={`p-3 sm:p-4 rounded-lg cursor-pointer transition-colors ${
                         selectedJob?.id === job.id
-                          ? 'bg-purple-100 border-purple-500 border'
+                          ? 'bg-emerald-100 border-emerald-500 border'
                           : 'bg-gray-50 hover:bg-gray-100'
                       }`}
                     >
@@ -165,7 +165,7 @@ export const Dashboard: React.FC = () => {
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
                         <div
-                          className="bg-purple-600 h-2 rounded-full transition-all duration-300"
+                          className="bg-emerald-600 h-2 rounded-full transition-all duration-300"
                           style={{
                             width: `${(job.completed_directories / job.total_directories) * 100}%`
                           }}
@@ -189,10 +189,10 @@ export const Dashboard: React.FC = () => {
                           <p className="text-xs sm:text-sm text-gray-600">Total</p>
                           <p className="text-lg sm:text-2xl font-bold text-gray-900">{selectedJob.total_directories}</p>
                         </div>
-                        <BarChart3 className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600" />
+                        <BarChart3 className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-600" />
                       </div>
                     </Card>
-                    
+
                     <Card className="p-3 sm:p-6">
                       <div className="flex items-center justify-between">
                         <div>
@@ -202,7 +202,7 @@ export const Dashboard: React.FC = () => {
                         <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
                       </div>
                     </Card>
-                    
+
                     <Card className="p-3 sm:p-6">
                       <div className="flex items-center justify-between">
                         <div>
@@ -212,7 +212,7 @@ export const Dashboard: React.FC = () => {
                         <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
                       </div>
                     </Card>
-                    
+
                     <Card className="p-3 sm:p-6">
                       <div className="flex items-center justify-between">
                         <div>
@@ -232,7 +232,7 @@ export const Dashboard: React.FC = () => {
                         {results.length} directories
                       </div>
                     </div>
-                    
+
                     <div className="overflow-x-auto">
                       <table className="w-full">
                         <thead>
@@ -274,7 +274,7 @@ export const Dashboard: React.FC = () => {
                                       href={result.submission_url}
                                       target="_blank"
                                       rel="noopener noreferrer"
-                                      className="text-purple-600 hover:text-purple-800"
+                                      className="text-emerald-600 hover:text-emerald-800"
                                     >
                                       <Eye className="w-4 h-4" />
                                     </a>

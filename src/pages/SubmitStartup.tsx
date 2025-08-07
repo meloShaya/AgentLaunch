@@ -27,14 +27,14 @@ export const SubmitStartup: React.FC = () => {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const navigate = useNavigate();
 
-  const { 
-    register, 
-    handleSubmit, 
-    formState: { errors }, 
-    watch, 
-    trigger, 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    watch,
+    trigger,
     clearErrors,
-    getValues 
+    getValues
   } = useForm<FormData>({
     mode: 'onBlur',
     reValidateMode: 'onChange',
@@ -65,8 +65,8 @@ export const SubmitStartup: React.FC = () => {
   };
 
   const toggleTag = (tag: string) => {
-    setSelectedTags(prev => 
-      prev.includes(tag) 
+    setSelectedTags(prev =>
+      prev.includes(tag)
         ? prev.filter(t => t !== tag)
         : [...prev, tag]
     );
@@ -74,7 +74,7 @@ export const SubmitStartup: React.FC = () => {
 
   const nextStep = async () => {
     let fieldsToValidate: (keyof FormData)[] = [];
-    
+
     if (currentStep === 1) {
       fieldsToValidate = ['name', 'url', 'contactEmail', 'contactName'];
     } else if (currentStep === 2) {
@@ -83,10 +83,10 @@ export const SubmitStartup: React.FC = () => {
 
     // Clear any existing errors first
     clearErrors();
-    
+
     // Trigger validation for specific fields
     const isValid = await trigger(fieldsToValidate);
-    
+
     if (isValid) {
       setCurrentStep(prev => Math.min(prev + 1, totalSteps));
     }
@@ -99,7 +99,7 @@ export const SubmitStartup: React.FC = () => {
   // Use useCallback to prevent unnecessary re-renders that might trigger submission
   const onSubmit = useCallback(async (data: FormData) => {
     console.log('onSubmit called, currentStep:', currentStep, 'submitting:', submitting);
-    
+
     // Prevent submission if not on the final step or already submitting
     if (currentStep !== totalSteps || submitting) {
       console.log('Submission prevented - not on final step or already submitting');
@@ -153,7 +153,7 @@ export const SubmitStartup: React.FC = () => {
     e.preventDefault();
     e.stopPropagation();
     console.log('handleFormSubmit called, currentStep:', currentStep);
-    
+
     // Only proceed if we're on the final step
     if (currentStep === totalSteps) {
       handleSubmit(onSubmit)(e);
@@ -165,7 +165,7 @@ export const SubmitStartup: React.FC = () => {
     e.preventDefault();
     e.stopPropagation();
     console.log('Submit button clicked, currentStep:', currentStep, 'submitting:', submitting);
-    
+
     if (currentStep === totalSteps && !submitting) {
       const formData = getValues();
       onSubmit(formData);
@@ -185,7 +185,7 @@ export const SubmitStartup: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
               <Input
                 label="Startup Name *"
-                {...register('name', { 
+                {...register('name', {
                   required: 'Startup name is required',
                   minLength: { value: 2, message: 'Name must be at least 2 characters' },
                   validate: value => value.trim().length > 0 || 'Startup name cannot be empty'
@@ -193,10 +193,10 @@ export const SubmitStartup: React.FC = () => {
                 error={errors.name?.message}
                 placeholder="e.g., MyAwesome Startup"
               />
-              
+
               <Input
                 label="Website URL *"
-                {...register('url', { 
+                {...register('url', {
                   required: 'Website URL is required',
                   pattern: {
                     value: /^https?:\/\/.+\..+/,
@@ -219,7 +219,7 @@ export const SubmitStartup: React.FC = () => {
               <Input
                 label="Contact Email *"
                 type="email"
-                {...register('contactEmail', { 
+                {...register('contactEmail', {
                   required: 'Contact email is required',
                   pattern: {
                     value: /^\S+@\S+\.\S+$/,
@@ -234,10 +234,10 @@ export const SubmitStartup: React.FC = () => {
                 error={errors.contactEmail?.message}
                 placeholder="founder@myawesomestartup.com"
               />
-              
+
               <Input
                 label="Contact Name *"
-                {...register('contactName', { 
+                {...register('contactName', {
                   required: 'Contact name is required',
                   minLength: { value: 2, message: 'Name must be at least 2 characters' },
                   validate: value => value.trim().length > 0 || 'Contact name cannot be empty'
@@ -250,7 +250,7 @@ export const SubmitStartup: React.FC = () => {
             <Input
               label="Founded Year"
               type="number"
-              {...register('foundedYear', { 
+              {...register('foundedYear', {
                 min: { value: 1900, message: 'Please enter a valid year' },
                 max: { value: new Date().getFullYear(), message: 'Founded year cannot be in the future' },
                 validate: value => {
@@ -276,7 +276,7 @@ export const SubmitStartup: React.FC = () => {
 
             <Textarea
               label="Full Description *"
-              {...register('description', { 
+              {...register('description', {
                 required: 'Description is required',
                 minLength: { value: 50, message: 'Description should be at least 50 characters' },
                 maxLength: { value: 1000, message: 'Description should be under 1000 characters' },
@@ -295,7 +295,7 @@ export const SubmitStartup: React.FC = () => {
 
             <Textarea
               label="Short Description *"
-              {...register('shortDescription', { 
+              {...register('shortDescription', {
                 required: 'Short description is required',
                 minLength: { value: 10, message: 'Short description should be at least 10 characters' },
                 maxLength: { value: 160, message: 'Short description should be under 160 characters' },
@@ -317,11 +317,11 @@ export const SubmitStartup: React.FC = () => {
                 Category *
               </label>
               <select
-                {...register('category', { 
+                {...register('category', {
                   required: 'Please select a category',
                   validate: value => value !== '' || 'Please select a category'
                 })}
-                className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
               >
                 <option value="">Select a category</option>
                 {categories.map(category => (
@@ -347,12 +347,12 @@ export const SubmitStartup: React.FC = () => {
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Logo (Optional)
               </label>
-              <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 sm:p-8 text-center hover:border-purple-500 transition-colors">
+              <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 sm:p-8 text-center hover:border-emerald-500 transition-colors">
                 {logoPreview ? (
                   <div className="space-y-4">
-                    <img 
-                      src={logoPreview} 
-                      alt="Logo preview" 
+                    <img
+                      src={logoPreview}
+                      alt="Logo preview"
                       className="w-20 h-20 sm:w-32 sm:h-32 object-contain mx-auto rounded-lg"
                     />
                     <Button
@@ -407,7 +407,7 @@ export const SubmitStartup: React.FC = () => {
                     onClick={() => toggleTag(tag)}
                     className={`px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm transition-colors ${
                       selectedTags.includes(tag)
-                        ? 'bg-purple-600 text-white'
+                        ? 'bg-emerald-600 text-white'
                         : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                     }`}
                   >
@@ -422,13 +422,13 @@ export const SubmitStartup: React.FC = () => {
                     {selectedTags.map(tag => (
                       <span
                         key={tag}
-                        className="inline-flex items-center px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm bg-purple-100 text-purple-800"
+                        className="inline-flex items-center px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm bg-emerald-100 text-emerald-800"
                       >
                         {tag}
                         <button
                           type="button"
                           onClick={() => toggleTag(tag)}
-                          className="ml-1 sm:ml-2 hover:text-purple-600"
+                          className="ml-1 sm:ml-2 hover:text-emerald-600"
                         >
                           ×
                         </button>
@@ -459,7 +459,7 @@ export const SubmitStartup: React.FC = () => {
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2">
             <motion.div
-              className="bg-gradient-to-r from-purple-600 to-cyan-600 h-2 rounded-full"
+              className="bg-gradient-to-r from-emerald-600 to-amber-600 h-2 rounded-full"
               initial={{ width: 0 }}
               animate={{ width: `${(currentStep / totalSteps) * 100}%` }}
               transition={{ duration: 0.3 }}

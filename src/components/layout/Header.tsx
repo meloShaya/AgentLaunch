@@ -34,11 +34,11 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
           <Link to="/" className="flex items-center space-x-2" onClick={closeMobileMenu}>
             <motion.div
               whileHover={{ rotate: 15 }}
-              className="p-2 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-lg"
+              className="p-2 bg-gradient-to-r from-emerald-600 to-amber-600 rounded-lg"
             >
               <Rocket className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </motion.div>
-            <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-purple-600 to-cyan-600 bg-clip-text text-transparent">
+            <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-emerald-600 to-amber-600 bg-clip-text text-transparent">
               AgentLaunch AI
             </span>
           </Link>
@@ -110,23 +110,23 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden border-t border-gray-200 py-4 space-y-4"
           >
-            <Link 
-              to="/pricing" 
+            <Link
+              to="/pricing"
               className="block px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
               onClick={closeMobileMenu}
             >
               Pricing
             </Link>
             {user && (
-              <Link 
-                to="/dashboard" 
+              <Link
+                to="/dashboard"
                 className="block px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
                 onClick={closeMobileMenu}
               >
                 Dashboard
               </Link>
             )}
-            
+
             <div className="border-t border-gray-200 pt-4">
               {user ? (
                 <div className="space-y-4">

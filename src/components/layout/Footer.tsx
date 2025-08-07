@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="p-2 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-lg">
+              <div className="p-2 bg-gradient-to-r from-emerald-600 to-amber-600 rounded-lg">
                 <Rocket className="w-6 h-6 text-white" />
               </div>
               <span className="text-xl font-bold">AgentLaunch AI</span>
@@ -64,7 +64,7 @@ export const Footer: React.FC = () => {
           href="https://bolt.new/"
           target="_blank"
           rel="noopener noreferrer"
-          className="block transition-transform hover:scale-105 focus:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded-lg"
+          className="block transition-transform hover:scale-105 focus:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded-lg"
           aria-label="Powered by Bolt.new"
         >
           <img

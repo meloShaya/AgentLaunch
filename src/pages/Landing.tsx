@@ -42,7 +42,7 @@ export const Landing: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-purple-900 via-blue-900 to-cyan-900">
+      <section className="relative overflow-hidden bg-gradient-to-br from-emerald-900 via-amber-900 to-orange-900">
         <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/8849295/pexels-photo-8849295.jpeg')] opacity-10 bg-cover bg-center" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32">
           <div className="text-center space-y-6 sm:space-y-8">
@@ -53,19 +53,19 @@ export const Landing: React.FC = () => {
             >
               <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
                 Launch Your Startup
-                <span className="block bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-amber-400 to-emerald-400 bg-clip-text text-transparent">
                   Everywhere, Instantly
                 </span>
               </h1>
             </motion.div>
-            
+
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto px-4"
             >
-              AI-powered automation submits your startup to 100+ directories in minutes, 
+              AI-powered automation submits your startup to 100+ directories in minutes,
               not months. Get discovered, drive traffic, and grow faster.
             </motion.p>
 
@@ -119,7 +119,7 @@ export const Landing: React.FC = () => {
               Why Choose AgentLaunch AI?
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-              Traditional directory submissions take weeks and cost thousands. 
+              Traditional directory submissions take weeks and cost thousands.
               Our AI does it in minutes for a fraction of the price.
             </p>
           </div>
@@ -134,7 +134,7 @@ export const Landing: React.FC = () => {
                 viewport={{ once: true }}
               >
                 <Card className="p-6 sm:p-8 text-center h-full" hover>
-                  <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-lg mb-4 sm:mb-6">
+                  <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-emerald-600 to-amber-600 rounded-lg mb-4 sm:mb-6">
                     <feature.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">{feature.title}</h3>
@@ -184,7 +184,7 @@ export const Landing: React.FC = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full text-white font-bold text-lg sm:text-xl mb-4 sm:mb-6">
+                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-emerald-600 to-amber-600 rounded-full text-white font-bold text-lg sm:text-xl mb-4 sm:mb-6">
                   {item.step}
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">{item.title}</h3>
@@ -235,7 +235,7 @@ export const Landing: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-24 bg-gradient-to-r from-purple-600 to-cyan-600">
+      <section className="py-16 sm:py-24 bg-gradient-to-r from-emerald-600 to-amber-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -246,15 +246,15 @@ export const Landing: React.FC = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
               Ready to Launch Everywhere?
             </h2>
-            <p className="text-lg sm:text-xl text-purple-100 mb-6 sm:mb-8">
-              Join hundreds of startups using AI to accelerate their growth. 
+            <p className="text-lg sm:text-xl text-emerald-100 mb-6 sm:mb-8">
+              Join hundreds of startups using AI to accelerate their growth.
               Get started today and see results in minutes.
             </p>
             <Link to="/auth">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 variant="secondary"
-                className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 bg-white text-purple-600 hover:bg-gray-100"
+                className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 bg-white text-emerald-600 hover:bg-gray-100"
               >
                 Start Your Campaign Now
                 <Rocket className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />

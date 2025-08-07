@@ -39,7 +39,7 @@ function App() {
     return (
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-purple-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <div className="w-12 h-12 border-4 border-emerald-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
           {LOCAL_MEMORY && (
             <div className="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded mb-4">
               <p className="font-semibold">🧪 Demo Mode Active</p>
@@ -55,7 +55,7 @@ function App() {
     <Router>
       <div className="min-h-screen bg-white">
         {LOCAL_MEMORY && (
-          <div className="bg-blue-600 text-white text-center py-2 px-4 text-sm">
+          <div className="bg-emerald-600 text-white text-center py-2 px-4 text-sm">
             🧪 <strong>Demo Mode:</strong> Using mock data - No real payments or submissions
           </div>
         )}
@@ -65,13 +65,13 @@ function App() {
             <Route path="/" element={<Landing />} />
             <Route path="/auth" element={user ? <Navigate to="/dashboard" /> : <AuthPage />} />
             <Route path="/pricing" element={<Pricing />} />
-            <Route 
-              path="/dashboard" 
-              element={user ? <Dashboard /> : <Navigate to="/auth" />} 
+            <Route
+              path="/dashboard"
+              element={user ? <Dashboard /> : <Navigate to="/auth" />}
             />
-            <Route 
-              path="/submit" 
-              element={user ? <SubmitStartup /> : <Navigate to="/auth" />} 
+            <Route
+              path="/submit"
+              element={user ? <SubmitStartup /> : <Navigate to="/auth" />}
             />
           </Routes>
         </main>
